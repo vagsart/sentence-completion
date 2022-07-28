@@ -1,4 +1,4 @@
-# Added Instructions
+# New Instructions
 1. Create and activate python virtual environment
 ```bash
 python -m venv my_env
