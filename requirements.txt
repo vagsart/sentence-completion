@@ -1,7 +1,7 @@
 torchvision==0.2.0
-torch==0.3.0.post4
-numpy==1.13.3
-pandas==0.21.0
+torch==1.12.0+cu102
+numpy==1.23.1
+pandas==1.4.3
 nltk==3.2.5
 tqdm==4.19.5
-Cython==0.27.3
+cython==0.29.31

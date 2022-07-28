@@ -12,7 +12,7 @@ def tokenize(text, tokenizer):
     if tokenizer == 'nltk':
         import nltk
         return nltk.tokenize.word_tokenize(text)
-   else:
+    else:
         return text.split()
 
 

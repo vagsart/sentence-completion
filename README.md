@@ -1,3 +1,34 @@
+# Added Instructions
+1. Create and activate python virtual environment
+```bash
+python -m venv my_env
+source my_env/bin/activate
+```
+2. Install Requirements
+```bash 
+pip install -r requirements.txt
+```
+4. Download punkt
+```python
+import nltk
+nltk.download()
+```
+5. - Build Log_Uniform Sampler according to [Link](https:/py/github.com/rdspring1/PyTorch_GBW_LM).
+```bash
+cd log_uniform
+python setup.py build_ext --inplace
+``` 
+6. Extract data to *data/prepro/guten/*
+7. Create train folder and run train.py script
+```bash
+mkdir train
+python train.py --cuda --save_dir mynet
+```
+8. Run eval script
+```bash
+python sent_complt.py --cuda --save_dir mynet
+```
+----
 # Word RNN for Sentence Completion
 A pytorch implementation of the word-level recurrent neural network for sentence completion.
 The code is based on [Word-level language modeling RNN](https://github.com/pytorch/examples/tree/master/word_language_model), and importance sampling module is from [PyTorch Large-Scale Language Model](https://github.com/rdspring1/PyTorch_GBW_LM).
@@ -13,7 +44,7 @@ The code is based on [Word-level language modeling RNN](https://github.com/pytor
 > pip3 install -r requirements.txt
 
 ## Setup
-- Build Log_Uniform Sampler according to [Link](https://github.com/rdspring1/PyTorch_GBW_LM).
+- Build Log_Uniform Sampler according to [Link](https:/py/github.com/rdspring1/PyTorch_GBW_LM).
 - Download `punkt` package in `nltk`.
 
 ## Datasets

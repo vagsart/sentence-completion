@@ -45,7 +45,7 @@ class SentenceSelection(object):
     def __init__(self, filename, n_chocies=5):
         self.choice_names = ['C%d' % i for i in range(1, n_chocies + 1)]
         path = os.path.join(sc_dir, filename)
-        df = pd.read_table(path, sep=',').ix[:, :n_chocies + 3]
+        df = pd.read_table(path, sep=',').iloc[:, :n_chocies + 3]
         df['ans'] = df['ans'].apply(lambda c: ord(c) - 96)
 
         df.columns = ['No', 'A', 'Q'] + self.choice_names
@@ -74,7 +74,8 @@ def eval_text(model, _word_ids, bidirec, start_loc=0, end_loc=0):
         partial_target = target[start_loc:end_loc]
         return criterion(partial_out, partial_target).data[0]
     else:
-        return criterion(output_v, target).data[0]
+        return criterion(output_v, target).item()
+        # return criterion(output_v, target).data[0]
 
 
 def eval_model(path, sc, verbose=2):

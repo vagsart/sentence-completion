@@ -119,7 +119,8 @@ def evaluate(data_source):
         output_flat = output.view(-1, ntokens)
         total_loss += criterion(output_flat, targets).data
         total_len += len(targets)
-    return total_loss[0] / total_len
+    # return total_loss[0] / total_len
+    return total_loss.item() / total_len
 
 
 def train(shuffle):
@@ -144,7 +145,8 @@ def train(shuffle):
             logits, __ = model(data)
             loss = criterion(logits.view(-1, ntokens), targets)
 
-        total_loss += loss.data[0]
+        # total_loss += loss.data[0]
+        total_loss += loss.item()
         total_len += len(targets)
 
         loss /= bsz
